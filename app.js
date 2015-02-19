@@ -1,4 +1,5 @@
 var attr = "ex-display-visible",
+		attrInline = "ex-display-visible-inline",
 		i,DOM,num;
 
 if($(document).find("[" + attr + "]")[0]){
@@ -26,20 +27,29 @@ for(i = 0;i < num;i++){
 		if($(DOM[i]).parents("[" + attr + "]").attr(attr) === "false"){
 			continue;
 		}
+		if(DOM[i].style.display === "none"){
+			DOM[i].setAttribute(attrInline, "");
+		}
 		DOM[i].style.display = "block";
 		DOM[i].setAttribute(attr, "true");
 	}else{
 		if(DOM[i].getAttribute(attr)){
 			DOM[i].setAttribute(attr, "false");
-			DOM[i].style.display = "";
+			if(DOM[i].getAttribute(attrInline) === ""){
+				DOM[i].style.display = "none";
+			}else{
+				DOM[i].style.display = "";
+			}
 		}
 	}
 }
 
 $(document).on("click", function(e){
 	// console.log($(e.target).attr(attr));
-	if(!$(e.target).attr(attr)){
+	// console.log($(e.target).parents("[" + attr + "]"));
+	if(!$(e.target).attr(attr) || !$(e.target).parents("[" + attr + "]")){
 		$("[" + attr + "]").css("display", "");
+		$("[" + attrInline + "]").css("display", "none");
 		$("[" + attr + "]").attr(attr, "false");
 	}
 });
