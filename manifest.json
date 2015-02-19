@@ -10,7 +10,7 @@
   ],
   "browser_action": {
       "default_title": "Display all visible",
-      "default_icon": "icon19.png"
+      "default_icon": "icon_01.png"
       // "default_popup" : "popup.html"
   },
   "manifest_version": 2
