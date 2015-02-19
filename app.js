@@ -1,6 +1,6 @@
 var DOM = document.getElementsByTagName("*"),
 		num = DOM.length,
-		attr = "display-visible",
+		attr = "ex-display-visible",
 		i;
 
 for(i = 0;i < num;i++){
@@ -15,11 +15,17 @@ for(i = 0;i < num;i++){
 	){
 		continue;
 	}
+	// console.log(DOM[i]);
 	if(!$(DOM[i]).is(':visible')){
+		if($(DOM[i]).parents("[" + attr + "]").attr(attr) === "false"){
+			continue;
+		}
 		DOM[i].style.display = "block";
 		DOM[i].setAttribute(attr, "true");
-	}else if(DOM[i].getAttribute(attr)){
-		DOM[i].style.display = "none";
-		DOM[i].removeAttribute(attr);
+	}else{
+		if(DOM[i].getAttribute(attr)){
+			DOM[i].setAttribute(attr, "false");
+			DOM[i].style.display = "none";
+		}
 	}
 }
