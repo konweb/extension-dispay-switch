@@ -13,5 +13,11 @@
       "default_icon": "icon_01.png"
       // "default_popup" : "popup.html"
   },
+  "content_scripts": [
+      {
+        "matches": ["http://*/*", "https://*/*"],
+        "css": ["style.css"]
+      }
+  ],
   "manifest_version": 2
 }

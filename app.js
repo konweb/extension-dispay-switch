@@ -31,7 +31,15 @@ for(i = 0;i < num;i++){
 	}else{
 		if(DOM[i].getAttribute(attr)){
 			DOM[i].setAttribute(attr, "false");
-			DOM[i].style.display = "none";
+			DOM[i].style.display = "";
 		}
 	}
 }
+
+$(document).on("click", function(e){
+	// console.log($(e.target).attr(attr));
+	if(!$(e.target).attr(attr)){
+		$("[" + attr + "]").css("display", "");
+		$("[" + attr + "]").attr(attr, "false");
+	}
+});
