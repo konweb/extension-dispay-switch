@@ -1,7 +1,12 @@
-var DOM = document.getElementsByTagName("*"),
-		num = DOM.length,
-		attr = "ex-display-visible",
-		i;
+var attr = "ex-display-visible",
+		i,DOM,num;
+
+if($(document).find("[" + attr + "]")[0]){
+	DOM = $(document).find("[" + attr + "]");
+}else{
+	DOM = $(document).find(":hidden");
+}
+num = DOM.length;
 
 for(i = 0;i < num;i++){
 	if(
@@ -16,6 +21,7 @@ for(i = 0;i < num;i++){
 	){
 		continue;
 	}
+	// console.log(DOM[i]);
 	if(!$(DOM[i]).is(':visible')){
 		if($(DOM[i]).parents("[" + attr + "]").attr(attr) === "false"){
 			continue;
