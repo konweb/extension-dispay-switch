@@ -20,23 +20,27 @@
 		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae illum debitis, tempore eos vel minima, qui voluptas culpa laboriosam ullam repellendus nobis sequi maxime reprehenderit. Eius, illo quasi fuga nobis.</div>
 	</div>
 
+	<button onClick="displayVisible()">visible</button>
+
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script>
-		var DOM = document.getElementsByTagName("*");
-		var num = DOM.length;
-		var i;
-		for(i = 0;i < num;i++){
-			if(
-				DOM[i].nodeName === "HEAD" ||
-				DOM[i].nodeName === "META" ||
-				DOM[i].nodeName === "TITLE" ||
-				DOM[i].nodeName === "STYLE" ||
-				DOM[i].nodeName === "SCRIPT"
-			){
-				continue;
-			}
-			if(!$(DOM[i]).is(':visible')){
-				DOM[i].style.display = "block";
+		function displayVisible(){
+			var DOM = document.getElementsByTagName("*");
+			var num = DOM.length;
+			var i;
+			for(i = 0;i < num;i++){
+				if(
+					DOM[i].nodeName === "HEAD" ||
+					DOM[i].nodeName === "META" ||
+					DOM[i].nodeName === "TITLE" ||
+					DOM[i].nodeName === "STYLE" ||
+					DOM[i].nodeName === "SCRIPT"
+				){
+					continue;
+				}
+				if(!$(DOM[i]).is(':visible')){
+					DOM[i].style.display = "block";
+				}
 			}
 		}
 	</script>
