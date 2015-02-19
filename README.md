@@ -17,8 +17,7 @@ git clone https://github.com/konweb/extension-display-switch
 ```
 
 # Settings
-- 設定 > 拡張機能 > パッケージ化されていない拡張機能を読み込む をクリック
-- ダウンロードしたmanifest.jsonを含むフォルダを選択
+- 設定 > 拡張機能ページに`.crx`ファイルをドラッグ&ドロップ
 
 ## Update history
 ### 1.0.0 (15/2/19)
