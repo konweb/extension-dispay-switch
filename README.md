@@ -1,7 +1,7 @@
 # Chrome Extension Display Switch
 非表示の要素を表示するChrome extension。
 
-### 対応プロパティ
+### Support Property
 | property |  |
 |:-----------|:------------|
 | display | &#x2713; |
