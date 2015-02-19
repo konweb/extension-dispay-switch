@@ -5,17 +5,17 @@ var DOM = document.getElementsByTagName("*"),
 
 for(i = 0;i < num;i++){
 	if(
-		DOM[i].nodeName === "HEAD" ||
-		DOM[i].nodeName === "META" ||
-		DOM[i].nodeName === "LINK" ||
-		DOM[i].nodeName === "TITLE" ||
-		DOM[i].nodeName === "STYLE" ||
-		DOM[i].nodeName === "SCRIPT" ||
-		DOM[i].nodeName === "NOSCRIPT"
+		DOM[i].nodeName === "HEAD"
+		|| DOM[i].nodeName === "META"
+		|| DOM[i].nodeName === "LINK"
+		|| DOM[i].nodeName === "TITLE"
+		|| DOM[i].nodeName === "STYLE"
+		|| DOM[i].nodeName === "SCRIPT"
+		|| DOM[i].nodeName === "NOSCRIPT"
+		|| DOM[i].nodeName === "IFRAME" && String($(DOM[i])[0].src).match(/chrome-extension:/)
 	){
 		continue;
 	}
-	// console.log(DOM[i]);
 	if(!$(DOM[i]).is(':visible')){
 		if($(DOM[i]).parents("[" + attr + "]").attr(attr) === "false"){
 			continue;
