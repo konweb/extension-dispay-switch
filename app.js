@@ -22,7 +22,6 @@ for(i = 0;i < num;i++){
 	){
 		continue;
 	}
-	// console.log(DOM[i]);
 	if(!$(DOM[i]).is(':visible')){
 		if($(DOM[i]).parents("[" + attr + "]").attr(attr) === "false"){
 			continue;
@@ -45,8 +44,6 @@ for(i = 0;i < num;i++){
 }
 
 $(document).on("click", function(e){
-	// console.log($(e.target).attr(attr));
-	// console.log($(e.target).parents("[" + attr + "]"));
 	if(!$(e.target).attr(attr) || !$(e.target).parents("[" + attr + "]")){
 		$("[" + attr + "]").css("display", "");
 		$("[" + attrInline + "]").css("display", "none");
