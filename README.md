@@ -10,7 +10,7 @@
 | height 0 | - |
 
 # Getting Started
-git clone or Download zip
+git clone or Download ZIP
 
 ```
 git clone https://github.com/konweb/extension-display-switch
